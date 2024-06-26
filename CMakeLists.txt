@@ -12,7 +12,7 @@ cmake_minimum_required(VERSION 3.22)
 
 # NOTE: CXX needed with DLA-Future
 # NOTE: C needed with HDF5 (dla-future +hdf5)
-project(DLAFFortran VERSION 0.1.0 LANGUAGES Fortran C CXX)
+project(DLAFFortran VERSION 0.2.0 LANGUAGES Fortran C CXX)
 
 include(CMakeDependentOption)
 include(GNUInstallDirs)
