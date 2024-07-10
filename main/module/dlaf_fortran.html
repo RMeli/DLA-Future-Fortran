@@ -70,7 +70,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="100.0% of total for modules and submodules.">396 statements</a>
+                 title="100.0% of total for modules and submodules.">406 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -165,8 +165,8 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
                   <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
               </ul>
             </li>
         </ul>
@@ -1931,7 +1931,9 @@
 </h3></div>
     <div class="card-body">
           
-  
+  <p>Generalized eigensolver for a distributed symmetric-definite eigenproblem of the form
+<script type="math/tex; mode=display">\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html" class="pull-right"><emph>Read more&hellip;</emph></a>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1956,7 +1958,8 @@
             <td>::</td>
             <td><strong>uplo</strong></td>
             <td>
-
+<p>Indicates whether the upper (<code>"U"</code>) or lower (<code>"L"</code>) triangular part of the global sub-matrix
+<script type="math/tex">\mathbf{A}</script> is referenced</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-uplo~10" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -1971,7 +1974,7 @@
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-
+<p>Order of the sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -1986,7 +1989,8 @@
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2001,7 +2005,8 @@
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-ia~10" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2016,7 +2021,8 @@
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-ja~10" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2031,7 +2037,8 @@
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2046,7 +2053,8 @@
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-
+<p>Local part of the Cholesky factorization of global matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-b~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2061,7 +2069,8 @@
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-ib~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2076,7 +2085,8 @@
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-jb~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2091,7 +2101,8 @@
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2106,7 +2117,7 @@
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-
+<p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -2121,7 +2132,8 @@
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2136,7 +2148,8 @@
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-iz~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2151,7 +2164,8 @@
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-jz~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2166,7 +2180,8 @@
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2181,7 +2196,7 @@
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-
+<p><code>0</code> if the eigensolver completed normally</p>
             </td>
         </tr>
     </tbody>
@@ -3804,7 +3819,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-07-10T14:41:35.882440 <br>&copy; <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>             </p>
+ on 2024-07-10T14:54:14.295388 <br>&copy; <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>             </p>
           </div>
         </div>
         <br>
