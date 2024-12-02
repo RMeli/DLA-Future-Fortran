@@ -443,6 +443,22 @@ contains
 
    end subroutine dlaf_pzheevd
 
+      !! Generalized eigensolver for a distributed symmetric-definite eigenproblem of the form
+      !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
+      !!
+      !! @note
+      !! The input matrix and the matrix of eigenvectors are assumed to be distributed in host memory.
+      !! Moving to and from GPU memory is handled internally.
+      !! @endnote
+      !!
+      !! @note
+      !! The vector of eigenvalues is assumed to be local (non-distributed) and in host memory.
+      !! Moving to and from GPU memory is handled internally.
+      !! @endnote
+      !!
+      !! @note
+      !! The pika runtime is resumed when this function is called and suspended when the call terminates.
+      !! @endnote
    subroutine dlaf_pssygvd(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
       !! Generalized eigensolver for a distributed single-precision symmetric-definite eigenproblem of the form
       !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
