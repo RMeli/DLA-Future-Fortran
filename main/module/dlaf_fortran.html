@@ -70,7 +70,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="100.0% of total for modules and submodules.">427 statements</a>
+                 title="100.0% of total for modules and submodules.">487 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -165,8 +165,8 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
                   <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_fortran_env'>iso_fortran_env</a></li>
+                  <li class="list-inline-item"><a href='http://fortranwiki.org/fortran/show/iso_c_binding'>iso_c_binding</a></li>
               </ul>
             </li>
         </ul>
@@ -1824,7 +1824,7 @@
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
 </p><a href="../proc/dlaf_pssygvd.html#variable-ib" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
@@ -1840,7 +1840,7 @@
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
 </p><a href="../proc/dlaf_pssygvd.html#variable-jb" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
@@ -2008,7 +2008,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-<p>Order of the sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
+<p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -2039,7 +2039,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
 </p><a href="../proc/dlaf_pssygvd_factorized.html#variable-ia~10" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
@@ -2055,7 +2055,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
 </p><a href="../proc/dlaf_pssygvd_factorized.html#variable-ja~10" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
@@ -2087,8 +2087,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-<p>Local part of the Cholesky factorization of global matrix <script type="math/tex">\mathbf{B}</script>
-</p><a href="../proc/dlaf_pssygvd_factorized.html#variable-b~2" class="pull-right"><emph>Read more&hellip;</emph></a>
+<p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2103,7 +2103,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
 </p><a href="../proc/dlaf_pssygvd_factorized.html#variable-ib~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
@@ -2119,7 +2119,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
 </p><a href="../proc/dlaf_pssygvd_factorized.html#variable-jb~2" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
@@ -2230,7 +2230,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-<p><code>0</code> if the eigensolver completed normally</p>
+<p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -2285,7 +2285,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-
+<p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -2300,7 +2300,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2315,7 +2316,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pdsygvd.html#variable-ia~11" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2330,7 +2332,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pdsygvd.html#variable-ja~11" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2345,7 +2348,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2360,7 +2364,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2375,7 +2380,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pdsygvd.html#variable-ib~3" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2390,7 +2396,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pdsygvd.html#variable-jb~3" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2405,7 +2412,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2420,7 +2428,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-
+<p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -2435,7 +2443,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2450,7 +2459,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pdsygvd.html#variable-iz~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2465,7 +2475,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pdsygvd.html#variable-jz~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2480,7 +2491,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2495,7 +2507,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-
+<p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -2550,7 +2562,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-
+<p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -2565,7 +2577,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2580,7 +2593,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pdsygvd_factorized.html#variable-ia~12" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2595,7 +2609,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pdsygvd_factorized.html#variable-ja~12" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2610,7 +2625,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2625,7 +2641,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2640,7 +2657,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pdsygvd_factorized.html#variable-ib~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2655,7 +2673,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pdsygvd_factorized.html#variable-jb~4" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2670,7 +2689,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2685,7 +2705,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-
+<p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -2700,7 +2720,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2715,7 +2736,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pdsygvd_factorized.html#variable-iz~8" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2730,7 +2752,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pdsygvd_factorized.html#variable-jz~8" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2745,7 +2768,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2760,7 +2784,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-
+<p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -2815,7 +2839,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-
+<p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -2830,7 +2854,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2845,7 +2870,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pchegvd.html#variable-ia~13" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2860,7 +2886,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pchegvd.html#variable-ja~13" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2875,7 +2902,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2890,7 +2918,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2905,7 +2934,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pchegvd.html#variable-ib~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2920,7 +2950,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pchegvd.html#variable-jb~5" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2935,7 +2966,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2950,7 +2982,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-
+<p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -2965,7 +2997,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -2980,7 +3013,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pchegvd.html#variable-iz~9" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -2995,7 +3029,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pchegvd.html#variable-jz~9" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3010,7 +3045,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3025,7 +3061,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-
+<p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -3080,7 +3116,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-
+<p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -3095,7 +3131,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3110,7 +3147,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pchegvd_factorized.html#variable-ia~14" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3125,7 +3163,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pchegvd_factorized.html#variable-ja~14" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3140,7 +3179,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3155,7 +3195,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3170,7 +3211,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pchegvd_factorized.html#variable-ib~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3185,7 +3227,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pchegvd_factorized.html#variable-jb~6" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3200,7 +3243,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3215,7 +3259,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-
+<p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -3230,7 +3274,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3245,7 +3290,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pchegvd_factorized.html#variable-iz~10" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3260,7 +3306,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pchegvd_factorized.html#variable-jz~10" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3275,7 +3322,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3290,7 +3338,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-
+<p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -3345,7 +3393,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-
+<p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -3360,7 +3408,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3375,7 +3424,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pzhegvd.html#variable-ia~15" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3390,7 +3440,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pzhegvd.html#variable-ja~15" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3405,7 +3456,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3420,7 +3472,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3435,7 +3488,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pzhegvd.html#variable-ib~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3450,7 +3504,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pzhegvd.html#variable-jb~7" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3465,7 +3520,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3480,7 +3536,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-
+<p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -3495,7 +3551,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3510,7 +3567,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pzhegvd.html#variable-iz~11" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3525,7 +3583,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pzhegvd.html#variable-jz~11" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3540,7 +3599,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3555,7 +3615,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-
+<p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -3610,7 +3670,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-
+<p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -3625,7 +3685,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3640,7 +3701,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pzhegvd_factorized.html#variable-ia~16" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3655,7 +3717,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p><a href="../proc/dlaf_pzhegvd_factorized.html#variable-ja~16" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3670,7 +3733,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3685,7 +3749,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3700,7 +3765,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-
+<p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pzhegvd_factorized.html#variable-ib~8" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3715,7 +3781,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-
+<p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
+</p><a href="../proc/dlaf_pzhegvd_factorized.html#variable-jb~8" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3730,7 +3797,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3745,7 +3813,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-
+<p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -3760,7 +3828,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-
+<p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3775,7 +3844,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-
+<p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pzhegvd_factorized.html#variable-iz~12" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3790,7 +3860,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-
+<p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p><a href="../proc/dlaf_pzhegvd_factorized.html#variable-jz~12" class="pull-right"><emph>Read more&hellip;</emph></a>
             </td>
         </tr>
         <tr>
@@ -3805,7 +3876,8 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-
+<p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -3820,7 +3892,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-
+<p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -3853,7 +3925,7 @@ where <script type="math/tex">\mathbf{B}</script> is the result of a Cholesky fa
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-12-03T14:56:45.343634+0000 <br>&copy; <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>             </p>
+ on 2024-12-03T16:11:58.935986+0000 <br>&copy; <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>             </p>
           </div>
         </div>
         <br>
