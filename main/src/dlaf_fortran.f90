@@ -117,7 +117,7 @@ contains
       !! @endwarning
 
       integer, intent(in) :: blacs_context
-        !! BLACS context
+      !! BLACS context
 
       interface
          subroutine dlaf_free_grid_c(blacs_contxt) bind(C, name='dlaf_free_grid')
@@ -132,12 +132,7 @@ contains
 
    subroutine dlaf_pspotrf(uplo, n, a, ia, ja, desca, info)
       !! Cholesky decomposition for a distributed single-precision real symmetric positive definite matrix \(\mathbf{A}\)
-      !!
-      !! @note
-      !! The input matrix is assumed to be distributed in host memory. Moving to and from GPU memory is
-      !! handled internally.
-      !! @endnote
-
+      !! {!docs/snippets/note-host-matrix.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo.md!}
       integer, intent(in) :: n
@@ -173,12 +168,7 @@ contains
 
    subroutine dlaf_pdpotrf(uplo, n, a, ia, ja, desca, info)
       !! Cholesky decomposition for a distributed double-precision real symmetric positive definite matrix \(\mathbf{A}\)
-      !!
-      !! @note
-      !! The input matrix is assumed to be distributed in host memory. Moving to and from GPU memory is
-      !! handled internally.
-      !! @endnote
-
+      !! {!docs/snippets/note-host-matrix.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo.md!}
       integer, intent(in) :: n
@@ -213,6 +203,8 @@ contains
    end subroutine dlaf_pdpotrf
 
    subroutine dlaf_pcpotrf(uplo, n, a, ia, ja, desca, info)
+      !! Cholesky decomposition for a distributed single-precision complex Hermitian positive definite matrix \(\mathbf{A}\)
+      !! {!docs/snippets/note-host-matrix.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo.md!}
       integer, intent(in) :: n
@@ -247,6 +239,8 @@ contains
    end subroutine dlaf_pcpotrf
 
    subroutine dlaf_pzpotrf(uplo, n, a, ia, ja, desca, info)
+      !! Cholesky decomposition for a distributed double-precision complex Hermitian positive definite matrix \(\mathbf{A}\)
+      !! {!docs/snippets/note-host-matrix.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo.md!}
       integer, intent(in) :: n
@@ -336,6 +330,10 @@ contains
    end subroutine dlaf_pssyevd
 
    subroutine dlaf_pdsyevd(uplo, n, a, ia, ja, desca, w, z, iz, jz, descz, info)
+      !! Eigensolver for a distributed double-precision real symmetric matrix \(\mathbf{A}\)
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -387,6 +385,10 @@ contains
    end subroutine dlaf_pdsyevd
 
    subroutine dlaf_pcheevd(uplo, n, a, ia, ja, desca, w, z, iz, jz, descz, info)
+      !! Eigensolver for a distributed single-precision complex Hermitian matrix \(\mathbf{A}\)
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -438,6 +440,10 @@ contains
    end subroutine dlaf_pcheevd
 
    subroutine dlaf_pzheevd(uplo, n, a, ia, ja, desca, w, z, iz, jz, descz, info)
+      !! Eigensolver for a distributed double-precision complex Hermitian matrix \(\mathbf{A}\)
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -556,7 +562,6 @@ contains
    subroutine dlaf_pssygvd_factorized(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
       !! Generalized eigensolver for a distributed single-precision symmetric-definite eigenproblem of the form
       !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
-      !! where \(\mathbf{B}\) is the result of a Cholesky factorization.
       !! {!docs/snippets/note-host-matrix.md!}
       !! {!docs/snippets/note-local-evals.md!}
       !! {!docs/snippets/note-pika.md!}
@@ -623,6 +628,11 @@ contains
    end subroutine dlaf_pssygvd_factorized
 
    subroutine dlaf_pdsygvd(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
+      !! Generalized eigensolver for a distributed double-precision symmetric-definite eigenproblem of the form
+      !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -683,6 +693,12 @@ contains
    end subroutine dlaf_pdsygvd
 
    subroutine dlaf_pdsygvd_factorized(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
+      !! Generalized eigensolver for a distributed double-precision symmetric-definite eigenproblem of the form
+      !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
+      !! {!docs/snippets/note-factorized.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -745,6 +761,11 @@ contains
    end subroutine dlaf_pdsygvd_factorized
 
    subroutine dlaf_pchegvd(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
+      !! Generalized eigensolver for a distributed single-precision Hermitian eigenproblem of the form
+      !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -805,6 +826,12 @@ contains
    end subroutine dlaf_pchegvd
 
    subroutine dlaf_pchegvd_factorized(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
+      !! Generalized eigensolver for a distributed single-precision Hermitian eigenproblem of the form
+      !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
+      !! {!docs/snippets/note-factorized.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -867,6 +894,11 @@ contains
    end subroutine dlaf_pchegvd_factorized
 
    subroutine dlaf_pzhegvd(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
+      !! Generalized eigensolver for a distributed double-precision Hermitian eigenproblem of the form
+      !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
@@ -927,6 +959,12 @@ contains
    end subroutine dlaf_pzhegvd
 
    subroutine dlaf_pzhegvd_factorized(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)
+      !! Generalized eigensolver for a distributed double-precision Hermitian eigenproblem of the form
+      !! \[\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}\]
+      !! {!docs/snippets/note-host-matrix.md!}
+      !! {!docs/snippets/note-local-evals.md!}
+      !! {!docs/snippets/note-pika.md!}
+      !! {!docs/snippets/note-factorized.md!}
       character, intent(in) :: uplo
       !! {!docs/snippets/uplo-w-note.md!}
       integer, intent(in) :: n
