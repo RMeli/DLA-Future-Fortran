@@ -70,7 +70,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 3.0% of total for procedures.">22 statements</a>
+                 title=" 3.4% of total for procedures.">29 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -133,6 +133,22 @@
 </h2>
     
 
+    <p>Eigensolver for a distributed double-precision real symmetric matrix <script type="math/tex">\mathbf{A}</script>
+</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>The input matrix and the matrix of eigenvectors are assumed to be distributed in host memory.
+Moving to and from GPU memory is handled internally.</p>
+</div>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>The vector of eigenvalues is assumed to be local (non-distributed) and in host memory.
+Moving to and from GPU memory is handled internally.</p>
+</div>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>The pika runtime is resumed when this function is called and suspended when the call terminates.</p>
+</div>
 
 
     <h3>Arguments</h3>
@@ -158,7 +174,11 @@
             <td>::</td>
             <td><strong>uplo</strong></td>
             <td>
-                
+                <p>Indicates whether the upper (<code>"U"</code>) or lower (<code>"L"</code>) triangular part of the global sub-matrix <script type="math/tex">\mathbf{A}</script> is referenced</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
+</div>
             </td>
         </tr>
         <tr>
@@ -173,7 +193,7 @@
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-                
+                <p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
             </td>
         </tr>
         <tr>
@@ -188,7 +208,8 @@
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-                
+                <p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -203,7 +224,12 @@
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-                
+                <p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
+</div>
             </td>
         </tr>
         <tr>
@@ -218,7 +244,12 @@
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-                
+                <p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
+</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
+</div>
             </td>
         </tr>
         <tr>
@@ -233,7 +264,8 @@
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-                
+                <p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -248,7 +280,7 @@
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-                
+                <p>Local (non-distributed) vector of eigenvalues</p>
             </td>
         </tr>
         <tr>
@@ -263,7 +295,8 @@
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-                
+                <p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -278,7 +311,12 @@
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-                
+                <p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
+</div>
             </td>
         </tr>
         <tr>
@@ -293,7 +331,12 @@
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-                
+                <p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
+</div>
             </td>
         </tr>
         <tr>
@@ -308,7 +351,8 @@
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-                
+                <p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
+</p>
             </td>
         </tr>
         <tr>
@@ -323,7 +367,11 @@
             <td>::</td>
             <td><strong>il</strong></td>
             <td>
-                
+                <p>Index (from smallest to largest) of the smallest eigenvector to be computed.</p>
+<div class="alert alert-info">
+<p class="alert-title h4">Note</p>
+<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
+</div>
             </td>
         </tr>
         <tr>
@@ -338,7 +386,7 @@
             <td>::</td>
             <td><strong>iu</strong></td>
             <td>
-                
+                <p>Index (from smallest to largest) of the largest eigenvector to be computed.</p>
             </td>
         </tr>
         <tr>
@@ -353,7 +401,7 @@
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-                
+                <p><code>0</code> if the function completed successfully</p>
             </td>
         </tr>
     </tbody>
@@ -390,7 +438,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-12-06T09:26:24.651089+0000 <br>&copy; <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>             </p>
+ on 2024-12-06T09:49:44.790876+0000 <br>&copy; <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>             </p>
           </div>
         </div>
         <br>
