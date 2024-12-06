@@ -10,7 +10,7 @@
     <meta name="author" content="" >
     <link rel="icon" href="../favicon.png">
 
-    <title>dlaf_pssygvd_factorized &ndash; DLA-Future-Fortran</title>
+    <title>dlaf_pzhegvd_partial_spectrum_factorized &ndash; DLA-Future-Fortran</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -59,7 +59,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>dlaf_pssygvd_factorized
+    <h1>dlaf_pzhegvd_partial_spectrum_factorized
       <small>Subroutine</small>
       
     </h1>
@@ -70,7 +70,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 4.0% of total for procedures.">30 statements</a>
+                 title=" 3.0% of total for procedures.">22 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -84,7 +84,7 @@
           <ol class="breadcrumb justify-content-end mb-0">
                 <li class="breadcrumb-item"><a href='../sourcefile/dlaf_fortran.f90.html'>dlaf_fortran.f90</a></li>
                 <li class="breadcrumb-item"><a href='../module/dlaf_fortran.html'>dlaf_fortran</a></li>
-            <li class="breadcrumb-item active" aria-current="page">dlaf_pssygvd_factorized</li>
+            <li class="breadcrumb-item active" aria-current="page">dlaf_pzhegvd_partial_spectrum_factorized</li>
           </ol>
         </nav>
       </div>
@@ -129,31 +129,10 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>public  subroutine dlaf_pssygvd_factorized(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, info)  
+    <h2>public  subroutine dlaf_pzhegvd_partial_spectrum_factorized(uplo, n, a, ia, ja, desca, b, ib, jb, descb, w, z, iz, jz, descz, il, iu, info)  
 </h2>
     
 
-    <p>Generalized eigensolver for a distributed single-precision symmetric-definite eigenproblem of the form
-<script type="math/tex; mode=display">\mathbf{A}\mathbf{x} = \lambda\mathbf{B}\mathbf{x}</script>
-</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>The input matrix and the matrix of eigenvectors are assumed to be distributed in host memory.
-Moving to and from GPU memory is handled internally.</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>The vector of eigenvalues is assumed to be local (non-distributed) and in host memory.
-Moving to and from GPU memory is handled internally.</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>The pika runtime is resumed when this function is called and suspended when the call terminates.</p>
-</div>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>The matrix <script type="math/tex">\mathbf{B}</script> is assumed to be factorized; it is the result of a Cholesky factorization.</p>
-</div>
 
 
     <h3>Arguments</h3>
@@ -169,7 +148,7 @@ Moving to and from GPU memory is handled internally.</p>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-uplo~15"></span>
+              <span class="anchor" id="variable-uplo~28"></span>
               character(len=1),
             </td>
 <td>intent(in)</td>
@@ -179,16 +158,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>uplo</strong></td>
             <td>
-                <p>Indicates whether the upper (<code>"U"</code>) or lower (<code>"L"</code>) triangular part of the global sub-matrix <script type="math/tex">\mathbf{A}</script> is referenced</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
-</div>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n~15"></span>
+              <span class="anchor" id="variable-n~28"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -198,13 +173,13 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>n</strong></td>
             <td>
-                <p>Order of the matrix sub-matrix <script type="math/tex">\mathbf{A}</script> used in the computation</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-a~15"></span>
-              real(kind=sp),
+              <span class="anchor" id="variable-a~28"></span>
+              complex(kind=dp),
             </td>
 <td>intent(inout),</td>
               <td></td>            <td>
@@ -213,13 +188,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>a</strong></td>
             <td>
-                <p>Local part of the global matrix <script type="math/tex">\mathbf{A}</script>
-</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ia~15"></span>
+              <span class="anchor" id="variable-ia~28"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -229,17 +203,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>ia</strong></td>
             <td>
-                <p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{A}</script>
-</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
-</div>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ja~15"></span>
+              <span class="anchor" id="variable-ja~28"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -249,17 +218,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>ja</strong></td>
             <td>
-                <p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{A}</script>
-</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
-</div>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-desca~15"></span>
+              <span class="anchor" id="variable-desca~28"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -269,14 +233,13 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>desca</strong></td>
             <td>
-                <p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{A}</script>
-</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-b~3"></span>
-              real(kind=sp),
+              <span class="anchor" id="variable-b~16"></span>
+              complex(kind=dp),
             </td>
 <td>intent(inout),</td>
               <td></td>            <td>
@@ -285,13 +248,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>b</strong></td>
             <td>
-                <p>Local part of the global matrix <script type="math/tex">\mathbf{B}</script>
-</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-ib~3"></span>
+              <span class="anchor" id="variable-ib~16"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -301,17 +263,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>ib</strong></td>
             <td>
-                <p>Row index of the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{B}</script>
-</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
-</div>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-jb~3"></span>
+              <span class="anchor" id="variable-jb~16"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -321,17 +278,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>jb</strong></td>
             <td>
-                <p>Column index of the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{B}</script>
-</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
-</div>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-descb~3"></span>
+              <span class="anchor" id="variable-descb~16"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -341,14 +293,13 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>descb</strong></td>
             <td>
-                <p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{B}</script>
-</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-w~11"></span>
-              real(kind=sp),
+              <span class="anchor" id="variable-w~24"></span>
+              real(kind=dp),
             </td>
 <td>intent(out),</td>
               <td></td>            <td>
@@ -357,13 +308,13 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>w</strong></td>
             <td>
-                <p>Local (non-distributed) vector of eigenvalues</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-z~11"></span>
-              real(kind=sp),
+              <span class="anchor" id="variable-z~24"></span>
+              complex(kind=dp),
             </td>
 <td>intent(inout),</td>
               <td></td>            <td>
@@ -372,13 +323,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>z</strong></td>
             <td>
-                <p>Local part of the global matrix <script type="math/tex">\mathbf{Z}</script>
-</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-iz~11"></span>
+              <span class="anchor" id="variable-iz~24"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -388,17 +338,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>iz</strong></td>
             <td>
-                <p>Row index in the global matrix identifying the first row of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
-</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
-</div>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-jz~11"></span>
+              <span class="anchor" id="variable-jz~24"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -408,17 +353,12 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>jz</strong></td>
             <td>
-                <p>Column index in the global matrix identifying the first column of the sub-matrix <script type="math/tex">\mathbf{Z}</script>
-</p>
-<div class="alert alert-info">
-<p class="alert-title h4">Note</p>
-<p>Check restrictions on this parameter on the DLA-Future documentation, for the DLA-Future version you are using.</p>
-</div>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-descz~11"></span>
+              <span class="anchor" id="variable-descz~24"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -428,13 +368,42 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>descz</strong></td>
             <td>
-                <p>ScaLAPACK descriptor of the global matrix <script type="math/tex">\mathbf{Z}</script>
-</p>
+                
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-info~15"></span>
+              <span class="anchor" id="variable-il~12"></span>
+              integer(kind=i8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>il</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-iu~12"></span>
+              integer(kind=i8),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>iu</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-info~28"></span>
               integer,
             </td>
 <td>intent(out),</td>
@@ -444,7 +413,7 @@ Moving to and from GPU memory is handled internally.</p>
             <td>::</td>
             <td><strong>info</strong></td>
             <td>
-                <p><code>0</code> if the function completed successfully</p>
+                
             </td>
         </tr>
     </tbody>
