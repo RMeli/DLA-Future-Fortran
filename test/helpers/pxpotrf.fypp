@@ -146,6 +146,23 @@ contains
                   failed = .true.
                   write (error_unit, *) "ERROR: DLAF != ScaLAPACK (uplo='${uplo}$')"
                end if
+
+               ! Check against LAPACK
+
+               call ${name}$potrf(uplo, n, A, n, info)
+               if (info /= 0) then
+                  write (error_unit, *) 'ERROR: ${name}$potrf returned info = ', info
+               end if
+
+               if (.not. allclose(R_dlaf, A, uplo=uplo)) then
+                  failed = .true.
+                  write (error_unit, *) "ERROR: DLAF != LAPACK (uplo='${uplo}$')"
+               end if
+               if (.not. allclose(R_scalapack, A, uplo=uplo)) then
+                  failed = .true.
+                  write (error_unit, *) "ERROR: ScaLAPACK != LAPACK (uplo='${uplo}$')"
+               end if
+
             end if
 
             call bcast_check(failed)

@@ -70,7 +70,7 @@ contains
             ${type}$ (kind=${dtype}$), dimension(:, :), allocatable :: Z_local_dlaf_partial_spectrum
             ${type}$ (kind=${dtype}$), dimension(:, :), allocatable :: Z_dlaf, Z_scalapack
             ${type}$ (kind=${dtype}$), dimension(:, :), allocatable :: Z_dlaf_partial_spectrum
-            real(kind=${dtype}$), dimension(:), allocatable :: W_dlaf, W_scalapack, W_dlaf_partial_spectrum
+            real(kind=${dtype}$), dimension(:), allocatable :: W_dlaf, W_scalapack, W_dlaf_partial_spectrum, W_lapack
             real(kind=${dtype}$), parameter :: abstol = #{if dtype == 'sp'}# 1e-5_${dtype}$ #{else}# 1e-8_${dtype}$ #{endif}#
 
             integer, parameter :: lwork = 100, liwork = 100
@@ -102,6 +102,7 @@ contains
             call init_desc(descz_dlaf_partial_spectrum)
             if (rank == 0) then
                allocate (A(n, n))
+               allocate (W_lapack(n))
                allocate (Z_dlaf(n, n))
                allocate (Z_scalapack(n, n))
                allocate (Z_dlaf_partial_spectrum(n, n))
@@ -195,6 +196,30 @@ contains
 
             call p${symbol}$gemr2d(n, n, Z_local_scalapack, 1, 1, descz_local_scalapack, Z_scalapack, 1, 1, descz_scalapack, ictxt)
 
+            ! + ------ +
+            ! | LAPACK |
+            ! + ------ +
+
+            if (rank == 0) then
+               #:if type == 'real'
+                  call ${name}$evd( &
+                     'V', uplo, &
+                     n, A, n, W_lapack, &
+                     work, lwork, iwork, liwork, info &
+                  )
+               #:else
+                  call ${name}$evd( &
+                     'V', uplo, &
+                     n, A, n, W_lapack, &
+                     work, lwork, rwork, lrwork, iwork, liwork, info &
+                  )
+               #:endif
+               if (info /= 0) then
+                  write (error_unit, *) 'ERROR: ${name}$evd returned info = ', info
+                  call terminate(ictxt)
+               end if
+            end if
+
             ! + ------------- +
             ! | Check Results |
             ! + ------------- +
@@ -211,6 +236,15 @@ contains
                   failed = .true.
                   write (error_unit, *) "ERROR: DLAF_PS != ScaLAPACK (eigenvalues)"
                end if
+
+               if (.not. allclose(W_dlaf, W_lapack)) then
+                  failed = .true.
+                  write (error_unit, *) "ERROR: DLAF != LAPACK (eigenvalues)"
+               end if
+               if (.not. allclose(W_scalapack, W_lapack)) then
+                  failed = .true.
+                  write (error_unit, *) "ERROR: ScaLAPACK != LAPACK (eigenvalues)"
+               end if
             end if
 
             call bcast_check(failed)
@@ -223,6 +257,16 @@ contains
                 if (.not. allclose(abs(Z_dlaf), abs(Z_scalapack), atol=abstol)) then
                     failed = .true.
                     write (error_unit, *) "ERROR: DLAF != ScaLAPACK (eigenvectors)"
+                end if
+
+                if (.not. allclose(abs(Z_dlaf), abs(A), atol=abstol)) then
+                    failed = .true.
+                    write (error_unit, *) "ERROR: DLAF != LAPACK (eigenvectors)"
+                end if
+
+                if (.not. allclose(abs(Z_scalapack), abs(A), atol=abstol)) then
+                    failed = .true.
+                    write (error_unit, *) "ERROR: ScaLAPACK != LAPACK (eigenvectors)"
                 end if
 
                 ! The first "eval_idx_end" eigenvectors are the same as ScaLAPACK
@@ -257,6 +301,7 @@ contains
 
             if (rank == 0) then
                if (allocated(A)) deallocate (A)
+               if (allocated(W_lapack)) deallocate(W_lapack)
                if (allocated(Z_dlaf)) deallocate (Z_dlaf)
                if (allocated(Z_scalapack)) deallocate (Z_scalapack)
             end if
